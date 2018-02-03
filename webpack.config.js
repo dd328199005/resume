@@ -71,7 +71,7 @@ module.exports = {
             $: 'jquery'
         }),
         new HtmlWebpackPlugin({
-            template: __dirname + "/index.html"
+            template: __dirname + "/view/index.html"
         }),
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin("style.css"), //分离css
