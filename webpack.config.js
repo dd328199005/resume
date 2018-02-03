@@ -3,13 +3,13 @@ let path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    entry: path.join(__dirname,'./src/js/apps/index.js'),
+    entry: path.join(__dirname,'./src/js/index.js'),
     output: {
         path: path.join(__dirname,'./public'),
         filename: 'index.js'
     },
     devServer: {
-        contentBase: './public', //本地服务器所加载的页面所在的目录
+        contentBase: './', //本地服务器所加载的页面所在的目录
         historyApiFallback: true,//不跳转
         inline: true,//实时刷新
         hot: true
@@ -19,10 +19,18 @@ module.exports = {
         alias: {
             scss: path.join(__dirname, './src/scss'),
             js: path.join(__dirname, './src/js'),
+            index: path.join(__dirname, ''),
         }
     },
     module: {
         rules: [
+            {
+                test: /\.js[x]?$/,
+                use: {
+                    loader: "babel-loader",
+                },
+                exclude: /node_modules/
+            },
             {
                 test: /\.scss$/,
                 use: [
@@ -31,7 +39,11 @@ module.exports = {
                     }, {
                         loader: "css-loader",
                         
-                    }, {
+                    },
+                    {
+                        loader: "postcss-loader", 
+                    },
+                    {
                         loader: "sass-loader"
                     }
                 ],
@@ -44,6 +56,9 @@ module.exports = {
                         loader: "style-loader"
                     }, {
                         loader: "css-loader"
+                    },
+                    {
+                        loader: "postcss-loader",
                     }
                 ],
                 exclude: /node_modules/

@@ -1,0 +1,37 @@
+$theme-color:#00D9BC;
+$one-color:#4D4D4D;
+$two-color:#808080;
+@mixin box-shadow {
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1) !important;
+}
+@media (max-width: 980px) { 
+    .navbar{
+        background-color: white !important;
+        
+    }
+    .bt-bigimg {
+        margin-top: 4rem;
+        h1{
+            span{
+                display: none !important;
+            }
+        }
+    }
+    .bt-foot-right, .bt-foot-left{
+        margin-top: 1rem;
+        margin-left: 0;
+        h5 {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-bottom: 2rem;
+        }
+        p { 
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 200;
+            padding: .1rem;
+            margin: .2rem;
+        }
+    }
+}
