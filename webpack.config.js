@@ -6,7 +6,7 @@ module.exports = {
     entry: path.join(__dirname,'./src/js/index.js'),
     output: {
         path: path.join(__dirname,'./public'),
-        filename: 'index.js'
+        filename: 'index.js',
     },
     devServer: {
         contentBase: './', //本地服务器所加载的页面所在的目录
@@ -24,6 +24,18 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: '1024',
+                            outputPath: './public/'
+                        }
+                    },
+                ]
+            },
             {
                 test: /\.js[x]?$/,
                 use: {
