@@ -17,7 +17,7 @@ export default class Navbar {
                     $('.navbar').removeClass('bt-shadow')
                 }
                 this.scrolling = false;
-            }, 300);
+            }, 200);
         })
     }
 
