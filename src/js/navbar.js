@@ -7,17 +7,12 @@ export default class Navbar {
     }
     bindEvent(){
         $(window).on('scroll', () => {
-            if (this.clock) {
-                clearTimeout(this.clock)
-            }
-            this.clock = setTimeout(() => {
                 if ($(window).scrollTop() > 540) {
                     $('.navbar').addClass('bt-shadow')
                 } else {
                     $('.navbar').removeClass('bt-shadow')
                 }
                 this.scrolling = false;
-            }, 200);
         })
     }
 

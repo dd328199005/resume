@@ -163,6 +163,15 @@ body {
                     color: $one-color;
                     font-size: 1.4rem;
                     line-height: 1.5;
+                    span {
+                        vertical-align: middle;
+                        display: inline-block;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 4px;
+                        background: #ABB5BC;
+                        margin-right: 8px;
+                    }
                 }
             }
         }
@@ -271,6 +280,9 @@ footer {
         p:nth-child(1){
             font-weight: 300;
             font-size: 1rem;
+            span {
+                margin-right: 12px;
+            }
         }    
         p:nth-child(2){
             font-weight: lighter;
